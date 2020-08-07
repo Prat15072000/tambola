@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+// Assets folder needs to be created with the images
+
 class Login extends StatefulWidget {
   @override
   _LoginState createState() => _LoginState();
