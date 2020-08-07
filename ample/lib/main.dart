@@ -1,9 +1,9 @@
 //import 'package:ample/forgotPass7.dart';
 import 'package:ample/gridapi.dart';
 import 'package:ample/listView.dart';
-import 'package:ample/numberClass.dart';
+// import 'package:ample/numberClass.dart';
 import 'package:flutter/material.dart';
-import 'list.dart';
+// import 'list.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,9 +16,5 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: TicketPage(),
     );
-
   }
 }
-
-
-

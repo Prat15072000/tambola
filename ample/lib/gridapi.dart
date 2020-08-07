@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:http/http.dart'as http;
-import 'package:ample/numberClass.dart';
+import 'package:http/http.dart' as http;
+// import 'package:ample/numberClass.dart';
 
 class Grid extends StatefulWidget {
   @override
@@ -9,18 +9,20 @@ class Grid extends StatefulWidget {
 }
 
 class _GridState extends State<Grid> {
- var nos;
+  var nos;
 
   @override
-  void initState(){
+  void initState() {
     super.initState();
     _getNumbers();
   }
-  _getNumbers() async{
-    var result = await http.post('https://tickets-qzd55332wa-de.a.run.app/generateTickets?ticketsRequired=0');
-    print(result.body);
 
+  _getNumbers() async {
+    var result = await http.post(
+        'https://tickets-qzd55332wa-de.a.run.app/generateTickets?ticketsRequired=0');
+    print(result.body);
   }
+
   @override
   Widget build(BuildContext context) {
     var h = MediaQuery.of(context).size.height;
@@ -31,35 +33,37 @@ class _GridState extends State<Grid> {
           children: <Widget>[
             Center(
               child: Container(
-                height: h/5,
-                width: w/1.3,
+                height: h / 5,
+                width: w / 1.3,
                 color: Colors.pink[100],
                 child: GridView.count(
-                    crossAxisCount: 9,
-                  children: List.generate(27, (index){
-                    return GestureDetector(
-                      onTap: (){
-                        print('Working');
-                      },
-                      child: Center(
-                        child: Text('Data'),
-                      ),
-                    );
-                  },
+                  crossAxisCount: 9,
+                  children: List.generate(
+                    27,
+                    (index) {
+                      return GestureDetector(
+                        onTap: () {
+                          print('Working');
+                        },
+                        child: Center(
+                          child: Text('Data'),
+                        ),
+                      );
+                    },
                   ),
                 ),
               ),
             ),
             Center(
               child: FlatButton(
-                  onPressed: (){
-                   //nos = 1;
-                  },
-                  child: Text('1'),
+                onPressed: () {
+                  //nos = 1;
+                },
+                child: Text('1'),
               ),
             ),
             GestureDetector(
-              onTap: (){
+              onTap: () {
                 setState(() {
                   //img = 'images/tmhm.jpg';
                 });
@@ -76,6 +80,7 @@ class _GridState extends State<Grid> {
     );
   }
 }
+
 class Img extends StatefulWidget {
   @override
   _ImgState createState() => _ImgState();
@@ -88,7 +93,3 @@ class _ImgState extends State<Img> {
     Image.asset(img);
   }
 }
-
-
-
-
